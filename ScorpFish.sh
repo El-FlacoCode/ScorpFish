@@ -157,7 +157,7 @@ printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Claro\e[0m      \e[1
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m DirecTV\e[0m        [\e[0m\e[1;77m99\e[0m\e[1;92m]\e[0m\e[1;93m Exit\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m03\e[0m\e[1;92m]\e[0m\e[1;93m GoogleWlan\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m04\e[0m\e[1;92m]\e[0m\e[1;93m Movistar\e[1;92m\n"
-printf "\e[1;92m[\e[0m\e[1;77m05\e[0m\e[1;92m]\e[0m\e[1;93m Telekom\e[0m\n"
+printf "\e[1;92m[\e[0m\e[1;77m05\e[0m\e[1;92m]\e[0m\e[1;93m Telecom\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m06\e[0m\e[1;92m]\e[0m\e[1;93m Telmex\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m07\e[0m\e[1;92m]\e[0m\e[1;93m TPLink\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m08\e[0m\e[1;92m]\e[0m\e[1;93m Tigo\e[0m\n"
@@ -180,7 +180,7 @@ elif [[ $option == 4 || $option == 04 ]]; then
 server="Movistar"
 start1
 elif [[ $option == 5 || $option == 05 ]]; then
-server="Telekom"
+server="Telecom"
 start1
 elif [[ $option == 6 || $option == 06 ]]; then
 server="Telmex"
